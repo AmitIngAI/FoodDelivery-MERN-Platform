@@ -292,7 +292,7 @@ Restaurant Dashboard
 
 🚗 Delivery Dashboard
 Delivery Dashboard
-
+```
 🔒 Security Features
 ✅ JWT Authentication - Secure token-based auth
 ✅ Password Hashing - bcrypt with salt rounds
@@ -301,7 +301,7 @@ Delivery Dashboard
 ✅ Rate Limiting - Prevent brute force attacks
 ✅ Helmet.js - Security HTTP headers
 ✅ Environment Variables - Sensitive data protection
-
+```
 🤝 Contributing
 Contributions are welcome! 
 

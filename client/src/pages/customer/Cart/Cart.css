@@ -1,0 +1,594 @@
+.cart-page {
+  min-height: 100vh;
+  background: var(--light);
+  padding: 100px 0 60px;
+}
+
+.cart-page.empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Empty Cart */
+.empty-cart {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.empty-cart-icon {
+  width: 150px;
+  height: 150px;
+  background: linear-gradient(135deg, rgba(255,107,107,0.1), rgba(255,107,107,0.05));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 30px;
+}
+
+.empty-cart-icon svg {
+  font-size: 5rem;
+  color: var(--primary);
+  opacity: 0.7;
+}
+
+.empty-cart h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--dark);
+  margin-bottom: 12px;
+}
+
+.empty-cart p {
+  color: #6c757d;
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+}
+
+.browse-btn {
+  padding: 14px 40px;
+  background: var(--gradient-primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius-full);
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+}
+
+/* Cart Header */
+.cart-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.cart-header .back-btn {
+  width: 45px;
+  height: 45px;
+  background: white;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: var(--shadow-md);
+}
+
+.header-text {
+  flex: 1;
+}
+
+.header-text h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin: 0;
+  color: var(--dark);
+}
+
+.header-text p {
+  margin: 4px 0 0 0;
+  color: #6c757d;
+}
+
+.clear-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: white;
+  border: 2px solid var(--danger);
+  color: var(--danger);
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.3s;
+}
+
+.clear-btn:hover {
+  background: var(--danger);
+  color: white;
+}
+
+/* Restaurant Info Bar */
+.restaurant-info-bar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: white;
+  padding: 20px;
+  border-radius: var(--radius-xl);
+  margin-bottom: 24px;
+  box-shadow: var(--shadow-sm);
+}
+
+.restaurant-info-bar img {
+  width: 70px;
+  height: 70px;
+  border-radius: var(--radius-lg);
+  object-fit: cover;
+}
+
+.restaurant-details {
+  flex: 1;
+}
+
+.restaurant-details h3 {
+  margin: 0 0 4px 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.restaurant-details p {
+  margin: 0;
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+.add-more-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 20px;
+  background: transparent;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.3s;
+}
+
+.add-more-btn:hover {
+  background: var(--primary);
+  color: white;
+}
+
+/* Cart Items */
+.cart-items {
+  background: white;
+  border-radius: var(--radius-xl);
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow-sm);
+}
+
+.cart-item {
+  display: flex;
+  gap: 16px;
+  padding: 20px 0;
+  border-bottom: 1px solid #e9ecef;
+  position: relative;
+}
+
+.cart-item:last-child {
+  border-bottom: none;
+}
+
+.item-image {
+  width: 100px;
+  height: 100px;
+  border-radius: var(--radius-lg);
+  object-fit: cover;
+}
+
+.item-details {
+  flex: 1;
+}
+
+.item-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.veg-indicator {
+  width: 18px;
+  height: 18px;
+  border: 2px solid;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.veg-indicator.veg {
+  border-color: var(--success);
+}
+
+.veg-indicator.non-veg {
+  border-color: var(--danger);
+}
+
+.veg-indicator span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.veg-indicator.veg span {
+  background: var(--success);
+}
+
+.veg-indicator.non-veg span {
+  background: var(--danger);
+}
+
+.item-header h4 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.item-customizations {
+  color: #6c757d;
+  font-size: 0.85rem;
+  margin: 0 0 12px 0;
+}
+
+.item-footer {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.item-price {
+  color: #6c757d;
+  font-size: 0.95rem;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  background: var(--light);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.quantity-controls button {
+  width: 36px;
+  height: 36px;
+  background: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.quantity-controls button:hover {
+  background: var(--primary);
+  color: white;
+}
+
+.quantity-controls .quantity {
+  width: 40px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.item-total {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--dark);
+  min-width: 80px;
+  text-align: right;
+}
+
+.remove-btn {
+  position: absolute;
+  top: 20px;
+  right: 0;
+  width: 36px;
+  height: 36px;
+  background: rgba(239, 71, 111, 0.1);
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--danger);
+  transition: all 0.3s;
+}
+
+.remove-btn:hover {
+  background: var(--danger);
+  color: white;
+}
+
+/* Cooking Instructions */
+.cooking-instructions {
+  background: white;
+  border-radius: var(--radius-xl);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+}
+
+.cooking-instructions h4 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 16px 0;
+  font-weight: 700;
+}
+
+.cooking-instructions h4 svg {
+  color: var(--primary);
+}
+
+.instructions-input .MuiOutlinedInput-root {
+  border-radius: var(--radius-lg);
+}
+
+/* Order Summary */
+.order-summary {
+  background: white;
+  border-radius: var(--radius-xl);
+  padding: 30px;
+  box-shadow: var(--shadow-md);
+  position: sticky;
+  top: 100px;
+}
+
+.order-summary h3 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin: 0 0 24px 0;
+  color: var(--dark);
+}
+
+/* Promo Section */
+.promo-section {
+  margin-bottom: 20px;
+}
+
+.promo-input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--light);
+  padding: 8px 12px;
+  border-radius: var(--radius-md);
+}
+
+.promo-icon {
+  color: var(--primary);
+}
+
+.promo-input-wrapper input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  outline: none;
+}
+
+.promo-input-wrapper button {
+  padding: 8px 20px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  transition: opacity 0.3s;
+}
+
+.promo-input-wrapper button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.promo-error {
+  color: var(--danger);
+  font-size: 0.85rem;
+  margin: 8px 0 0 0;
+}
+
+.available-promos {
+  margin-top: 10px;
+}
+
+.available-promos p {
+  color: #6c757d;
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+.promo-applied {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(135deg, rgba(6, 214, 160, 0.1), rgba(6, 214, 160, 0.05));
+  border: 1px solid var(--success);
+  padding: 16px;
+  border-radius: var(--radius-md);
+}
+
+.promo-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.promo-info svg {
+  color: var(--success);
+  font-size: 1.5rem;
+}
+
+.promo-info strong {
+  display: block;
+  color: var(--dark);
+}
+
+.promo-info p {
+  margin: 2px 0 0 0;
+  color: var(--success);
+  font-size: 0.85rem;
+}
+
+.remove-promo {
+  background: transparent;
+  border: none;
+  color: #6c757d;
+  cursor: pointer;
+}
+
+/* Bill Details */
+.summary-divider {
+  margin: 20px 0 !important;
+}
+
+.bill-details {
+  margin-bottom: 24px;
+}
+
+.bill-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  color: #495057;
+}
+
+.bill-row.discount span:last-child {
+  color: var(--success);
+}
+
+.bill-row .free {
+  color: var(--success);
+  font-weight: 600;
+}
+
+.bill-divider {
+  margin: 16px 0 !important;
+}
+
+.bill-row.total {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--dark);
+}
+
+/* Checkout Button */
+.checkout-btn {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 24px;
+  background: var(--gradient-primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius-lg);
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+}
+
+.checkout-amount {
+  background: rgba(255,255,255,0.2);
+  padding: 6px 16px;
+  border-radius: var(--radius-sm);
+}
+
+/* Savings Info */
+.savings-info {
+  text-align: center;
+  margin-top: 16px;
+  padding: 12px;
+  background: linear-gradient(135deg, rgba(255, 230, 109, 0.2), rgba(255, 230, 109, 0.1));
+  border-radius: var(--radius-md);
+  color: #b8860b;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* Responsive */
+@media (max-width: 960px) {
+  .order-summary {
+    position: static;
+    margin-top: 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  .cart-page {
+    padding: 80px 0 40px;
+  }
+  
+  .cart-header {
+    flex-wrap: wrap;
+  }
+  
+  .clear-btn span {
+    display: none;
+  }
+  
+  .restaurant-info-bar {
+    flex-wrap: wrap;
+  }
+  
+  .add-more-btn {
+    width: 100%;
+    justify-content: center;
+    margin-top: 12px;
+  }
+  
+  .cart-item {
+    flex-direction: column;
+  }
+  
+  .item-image {
+    width: 100%;
+    height: 150px;
+  }
+  
+  .item-footer {
+    flex-wrap: wrap;
+  }
+  
+  .item-total {
+    min-width: auto;
+    margin-left: auto;
+  }
+  
+  .remove-btn {
+    top: 10px;
+    right: 10px;
+  }
+}

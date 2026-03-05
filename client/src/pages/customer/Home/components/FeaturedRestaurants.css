@@ -1,0 +1,344 @@
+.restaurants-section {
+  position: relative;
+  background: white;
+}
+
+/* Decorations */
+.restaurants-decoration {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.deco-circle {
+  position: absolute;
+  border-radius: 50%;
+  border: 2px dashed var(--primary);
+  opacity: 0.1;
+}
+
+.circle-1 {
+  width: 300px;
+  height: 300px;
+  top: 100px;
+  left: -150px;
+}
+
+.circle-2 {
+  width: 200px;
+  height: 200px;
+  bottom: 100px;
+  right: -100px;
+}
+
+/* Filter Tabs */
+.filter-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 50px;
+  flex-wrap: wrap;
+}
+
+.filter-tab {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: var(--light);
+  border: 2px solid transparent;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all 0.3s;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--dark);
+}
+
+.filter-tab:hover {
+  background: white;
+  border-color: var(--primary);
+  box-shadow: var(--shadow-md);
+}
+
+.filter-tab.active {
+  background: var(--gradient-primary);
+  color: white;
+  border-color: var(--primary);
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+}
+
+.filter-icon {
+  font-size: 1.25rem;
+}
+
+/* Restaurant Card */
+.restaurant-card {
+  position: relative;
+  background: white;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: var(--shadow-sm);
+  height: 100%;
+}
+
+.restaurant-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-xl);
+}
+
+.restaurant-card:hover .card-hover-effect {
+  opacity: 1;
+}
+
+.card-hover-effect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient-vibrant);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* Image Container */
+.restaurant-image-container {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.restaurant-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s;
+}
+
+.image-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+}
+
+/* Badges */
+.image-badges {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.offer-badge {
+  background: var(--danger) !important;
+  color: white !important;
+  font-weight: 600 !important;
+  font-size: 0.75rem !important;
+  height: auto !important;
+  padding: 6px 10px !important;
+}
+
+.offer-badge .MuiChip-icon {
+  color: white !important;
+  font-size: 0.875rem;
+}
+
+.featured-badge {
+  background: var(--gradient-sunset) !important;
+  color: white !important;
+  font-weight: 700 !important;
+  font-size: 0.7rem !important;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Favorite Button */
+.favorite-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 40px;
+  height: 40px;
+  background: white;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s;
+}
+
+.favorite-btn:hover {
+  transform: scale(1.1);
+}
+
+.favorite-btn svg {
+  font-size: 1.25rem;
+  color: #6c757d;
+  transition: all 0.3s;
+}
+
+.favorite-btn svg.filled {
+  color: var(--danger);
+}
+
+/* Delivery Time Badge */
+.delivery-time-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: white;
+  padding: 6px 12px;
+  border-radius: var(--radius-full);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--dark);
+  box-shadow: var(--shadow-md);
+}
+
+.delivery-time-badge svg {
+  font-size: 1rem;
+  color: var(--primary);
+}
+
+/* Content */
+.restaurant-content {
+  padding: 20px;
+}
+
+.restaurant-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.restaurant-name-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.restaurant-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin: 0;
+}
+
+.pro-badge {
+  color: var(--info) !important;
+  font-size: 1.25rem;
+}
+
+.restaurant-rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--success);
+  color: white;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: 0.875rem;
+}
+
+.restaurant-rating svg {
+  font-size: 0.875rem;
+}
+
+/* Cuisines */
+.restaurant-cuisines {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #6c757d;
+  font-size: 0.875rem;
+  margin: 0 0 16px 0;
+}
+
+.veg-icon {
+  color: var(--success);
+  font-size: 0.75rem !important;
+}
+
+/* Footer */
+.restaurant-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 16px;
+  border-top: 1px solid #e9ecef;
+}
+
+.restaurant-price {
+  font-weight: 600;
+  color: var(--dark);
+  font-size: 0.9rem;
+}
+
+.restaurant-distance {
+  font-size: 0.875rem;
+  color: #6c757d;
+}
+
+/* View All Button */
+.view-all-btn.primary {
+  background: var(--gradient-primary);
+  border: none;
+  color: white;
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+}
+
+.view-all-btn.primary:hover {
+  box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4);
+}
+
+/* Responsive */
+@media (max-width: 960px) {
+  .restaurant-image-container {
+    height: 180px;
+  }
+}
+
+@media (max-width: 600px) {
+  .filter-tabs {
+    gap: 8px;
+  }
+  
+  .filter-tab {
+    padding: 10px 16px;
+    font-size: 0.875rem;
+  }
+  
+  .filter-label {
+    display: none;
+  }
+  
+  .filter-icon {
+    font-size: 1.5rem;
+  }
+  
+  .restaurant-image-container {
+    height: 160px;
+  }
+  
+  .restaurant-name {
+    font-size: 1.1rem;
+  }
+}

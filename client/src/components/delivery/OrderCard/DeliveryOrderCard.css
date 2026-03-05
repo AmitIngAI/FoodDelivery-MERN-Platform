@@ -1,0 +1,384 @@
+/* ========== Delivery Order Card ========== */
+.delivery-order-card {
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  padding: 20px;
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s;
+}
+
+.delivery-order-card:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+/* ========== Available Order Card ========== */
+.delivery-order-card.available {
+  border-left: 4px solid var(--primary);
+}
+
+.order-timer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+  color: var(--primary);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.order-timer svg {
+  font-size: 1.1rem;
+  animation: pulse 1s infinite;
+}
+
+.timer-bar {
+  flex: 1;
+  height: 4px;
+  background: #e9ecef;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.timer-progress {
+  height: 100%;
+  background: var(--primary);
+  border-radius: 2px;
+}
+
+/* Locations */
+.order-locations {
+  position: relative;
+  padding: 0 0 0 20px;
+}
+
+.location-item {
+  display: flex;
+  gap: 16px;
+  padding: 16px 0;
+}
+
+.location-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.location-item.pickup .location-icon {
+  background: rgba(255, 107, 107, 0.1);
+  color: var(--primary);
+}
+
+.location-item.dropoff .location-icon {
+  background: rgba(6, 214, 160, 0.1);
+  color: var(--success);
+}
+
+.location-info {
+  flex: 1;
+}
+
+.location-label {
+  font-size: 0.7rem;
+  color: #6c757d;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.location-info h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin: 4px 0;
+}
+
+.location-info p {
+  font-size: 0.85rem;
+  color: #6c757d;
+  margin: 0;
+}
+
+.route-connector {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-left: 20px;
+}
+
+.connector-line {
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary), var(--success));
+  border-radius: 1px;
+}
+
+.connector-distance {
+  background: var(--light);
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--dark);
+}
+
+/* Quick Details */
+.order-quick-details {
+  display: flex;
+  gap: 16px;
+  padding: 16px 0;
+  border-top: 1px dashed #e9ecef;
+  border-bottom: 1px dashed #e9ecef;
+  margin: 16px 0;
+}
+
+.order-quick-details .detail {
+  flex: 1;
+  text-align: center;
+}
+
+.order-quick-details .detail span {
+  display: block;
+  font-size: 0.7rem;
+  color: #6c757d;
+  margin-bottom: 4px;
+}
+
+.order-quick-details .detail strong {
+  font-size: 1rem;
+  color: var(--dark);
+}
+
+.order-quick-details .detail.earning strong {
+  color: var(--success);
+  font-size: 1.1rem;
+}
+
+/* Actions */
+.order-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.btn-reject,
+.btn-accept {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px;
+  border-radius: var(--radius-lg);
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.3s;
+}
+
+.btn-reject {
+  background: var(--light);
+  border: 2px solid #e9ecef;
+  color: var(--danger);
+}
+
+.btn-reject:hover {
+  background: var(--danger);
+  border-color: var(--danger);
+  color: white;
+}
+
+.btn-accept {
+  background: var(--gradient-primary);
+  border: none;
+  color: white;
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+}
+
+.btn-accept:hover {
+  box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+}
+
+/* ========== Active Order Card ========== */
+.delivery-order-card.active {
+  cursor: pointer;
+  border-left: 4px solid var(--secondary);
+}
+
+.delivery-order-card.active.info {
+  border-left-color: var(--info);
+}
+
+.delivery-order-card.active.warning {
+  border-left-color: var(--warning);
+}
+
+.delivery-order-card.active.primary {
+  border-left-color: var(--primary);
+}
+
+.active-order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.order-id {
+  font-weight: 700;
+  color: var(--dark);
+}
+
+.status-badge {
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.status-badge.accepted {
+  background: rgba(17, 138, 178, 0.15);
+  color: var(--info);
+}
+
+.status-badge.at_restaurant,
+.status-badge.picked_up {
+  background: rgba(255, 196, 61, 0.15);
+  color: #d4a520;
+}
+
+.status-badge.on_the_way {
+  background: rgba(78, 205, 196, 0.15);
+  color: var(--secondary-dark);
+}
+
+.active-order-body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.order-party {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #6c757d;
+}
+
+.order-party svg {
+  color: var(--primary);
+  font-size: 1.25rem;
+}
+
+.active-order-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 16px;
+  border-top: 1px solid #e9ecef;
+}
+
+.order-earning span {
+  display: block;
+  font-size: 0.75rem;
+  color: #6c757d;
+}
+
+.order-earning strong {
+  font-size: 1.1rem;
+  color: var(--success);
+}
+
+.arrow-icon {
+  color: #ccc;
+}
+
+/* ========== Completed Order Card ========== */
+.delivery-order-card.completed {
+  border-left: 4px solid var(--success);
+}
+
+.completed-header {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.completed-header img {
+  width: 60px;
+  height: 60px;
+  border-radius: var(--radius-md);
+  object-fit: cover;
+}
+
+.completed-info {
+  flex: 1;
+}
+
+.completed-info h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0 0 4px;
+  color: var(--dark);
+}
+
+.completed-info p {
+  font-size: 0.85rem;
+  color: #6c757d;
+  margin: 0 0 8px;
+}
+
+.completed-time {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  color: var(--success);
+}
+
+.completed-time svg {
+  font-size: 1rem;
+}
+
+.completed-earning {
+  text-align: right;
+}
+
+.completed-earning span {
+  display: block;
+  font-size: 0.75rem;
+  color: #6c757d;
+}
+
+.completed-earning strong {
+  font-size: 1.1rem;
+  color: var(--success);
+}
+
+.completed-rating {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #e9ecef;
+  font-size: 0.9rem;
+  color: var(--warning);
+  font-weight: 500;
+}
+
+/* ========== Responsive ========== */
+@media (max-width: 480px) {
+  .order-actions {
+    flex-direction: column;
+  }
+  
+  .order-quick-details {
+    flex-wrap: wrap;
+  }
+  
+  .order-quick-details .detail {
+    min-width: calc(50% - 8px);
+  }
+}

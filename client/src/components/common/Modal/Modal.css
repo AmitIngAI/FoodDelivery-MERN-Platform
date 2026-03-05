@@ -1,0 +1,365 @@
+/* ========== Modal Overlay ========== */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 9999;
+  overflow-y: auto;
+}
+
+/* ========== Modal Container ========== */
+.modal {
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xl);
+  width: 100%;
+  max-height: 90vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* Size Variants */
+.modal-sm { max-width: 400px; }
+.modal-md { max-width: 560px; }
+.modal-lg { max-width: 800px; }
+.modal-xl { max-width: 1100px; }
+.modal-full { 
+  max-width: calc(100vw - 40px); 
+  max-height: calc(100vh - 40px);
+}
+
+/* Style Variants */
+.modal-glass {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.modal-gradient {
+  background: linear-gradient(135deg, var(--white) 0%, #f8f9fa 100%);
+}
+
+/* ========== Modal Header ========== */
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid #e9ecef;
+  flex-shrink: 0;
+}
+
+.modal-title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.modal-icon {
+  font-size: 1.5rem;
+}
+
+.modal-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin: 0;
+}
+
+.modal-close-btn {
+  width: 36px !important;
+  height: 36px !important;
+  background: var(--light) !important;
+  border-radius: 50% !important;
+  transition: all 0.3s !important;
+}
+
+.modal-close-btn:hover {
+  background: var(--primary) !important;
+  color: white !important;
+  transform: rotate(90deg);
+}
+
+/* ========== Modal Body ========== */
+.modal-body {
+  padding: 24px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+/* Custom Scrollbar for Modal */
+.modal-body::-webkit-scrollbar {
+  width: 6px;
+}
+
+.modal-body::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.modal-body::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 3px;
+}
+
+/* ========== Modal Footer ========== */
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 16px 24px;
+  border-top: 1px solid #e9ecef;
+  background: var(--light);
+  flex-shrink: 0;
+}
+
+/* ========== Confirm Modal ========== */
+.confirm-modal .modal-body {
+  padding: 40px 24px;
+}
+
+.confirm-modal-content {
+  text-align: center;
+}
+
+.confirm-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  margin: 0 auto 24px;
+}
+
+.confirm-icon.danger {
+  background: rgba(239, 71, 111, 0.1);
+}
+
+.confirm-icon.warning {
+  background: rgba(255, 196, 61, 0.1);
+}
+
+.confirm-icon.success {
+  background: rgba(6, 214, 160, 0.1);
+}
+
+.confirm-icon.info {
+  background: rgba(78, 205, 196, 0.1);
+}
+
+.confirm-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin: 0 0 12px;
+}
+
+.confirm-message {
+  color: #6c757d;
+  font-size: 1rem;
+  margin: 0 0 32px;
+  line-height: 1.6;
+}
+
+.confirm-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+.confirm-actions .btn {
+  min-width: 120px;
+}
+
+.btn-danger {
+  background: var(--danger);
+  color: white;
+}
+
+.btn-danger:hover {
+  background: #dc3545;
+}
+
+.btn-warning {
+  background: var(--warning);
+  color: var(--dark);
+}
+
+.btn-success {
+  background: var(--success);
+  color: white;
+}
+
+.btn-info {
+  background: var(--info);
+  color: white;
+}
+
+/* ========== Alert Modal ========== */
+.alert-modal .modal-body {
+  padding: 40px 24px;
+}
+
+.alert-modal-content {
+  text-align: center;
+}
+
+.alert-icon {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  margin: 0 auto 24px;
+}
+
+.alert-icon.success {
+  background: linear-gradient(135deg, rgba(6, 214, 160, 0.2) 0%, rgba(6, 214, 160, 0.1) 100%);
+}
+
+.alert-icon.error {
+  background: linear-gradient(135deg, rgba(239, 71, 111, 0.2) 0%, rgba(239, 71, 111, 0.1) 100%);
+}
+
+.alert-icon.warning {
+  background: linear-gradient(135deg, rgba(255, 196, 61, 0.2) 0%, rgba(255, 196, 61, 0.1) 100%);
+}
+
+.alert-icon.info {
+  background: linear-gradient(135deg, rgba(78, 205, 196, 0.2) 0%, rgba(78, 205, 196, 0.1) 100%);
+}
+
+.alert-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin: 0 0 12px;
+}
+
+.alert-message {
+  color: #6c757d;
+  font-size: 1rem;
+  margin: 0 0 32px;
+  line-height: 1.6;
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.alert-modal-content .btn {
+  min-width: 150px;
+}
+
+/* ========== Image Modal ========== */
+.image-modal .modal-body {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+}
+
+.image-modal-content {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-modal-content img {
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: var(--radius-lg);
+}
+
+/* ========== Animations ========== */
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ========== Responsive ========== */
+@media (max-width: 768px) {
+  .modal-overlay {
+    padding: 16px;
+    align-items: flex-end;
+  }
+  
+  .modal {
+    max-height: 85vh;
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+  }
+  
+  .modal-sm,
+  .modal-md,
+  .modal-lg,
+  .modal-xl {
+    max-width: 100%;
+  }
+  
+  .modal-header {
+    padding: 16px 20px;
+  }
+  
+  .modal-body {
+    padding: 20px;
+  }
+  
+  .modal-footer {
+    padding: 16px 20px;
+  }
+  
+  .confirm-actions {
+    flex-direction: column;
+  }
+  
+  .confirm-actions .btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-title {
+    font-size: 1.1rem;
+  }
+  
+  .confirm-icon,
+  .alert-icon {
+    width: 70px;
+    height: 70px;
+    font-size: 2rem;
+  }
+  
+  .confirm-title,
+  .alert-title {
+    font-size: 1.25rem;
+  }
+  
+  .confirm-message,
+  .alert-message {
+    font-size: 0.9rem;
+  }
+}

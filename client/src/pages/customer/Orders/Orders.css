@@ -1,0 +1,288 @@
+.orders-page {
+  min-height: 100vh;
+  background: var(--light);
+  padding: 100px 0 60px;
+}
+
+/* Header */
+.orders-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 30px;
+}
+
+.header-icon {
+  font-size: 3rem !important;
+  color: var(--primary);
+}
+
+.orders-header h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin: 0;
+}
+
+.orders-header p {
+  margin: 4px 0 0 0;
+  color: #6c757d;
+}
+
+/* Tabs */
+.tabs-container {
+  background: white;
+  border-radius: var(--radius-xl);
+  margin-bottom: 24px;
+  box-shadow: var(--shadow-sm);
+}
+
+.orders-tabs .MuiTabs-indicator {
+  background: var(--primary);
+  height: 3px;
+  border-radius: 2px;
+}
+
+.orders-tabs .MuiTab-root {
+  font-weight: 600;
+  text-transform: none;
+  font-size: 1rem;
+}
+
+.orders-tabs .Mui-selected {
+  color: var(--primary) !important;
+}
+
+/* Orders List */
+.orders-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* No Orders */
+.no-orders {
+  text-align: center;
+  padding: 60px 20px;
+  background: white;
+  border-radius: var(--radius-xl);
+}
+
+.no-orders img {
+  max-width: 250px;
+  margin-bottom: 24px;
+  opacity: 0.7;
+}
+
+.no-orders h3 {
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+}
+
+.no-orders p {
+  color: #6c757d;
+  margin-bottom: 24px;
+}
+
+.browse-btn {
+  padding: 14px 40px;
+  background: var(--gradient-primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius-full);
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Order Card */
+.order-card {
+  background: white;
+  border-radius: var(--radius-xl);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s;
+}
+
+.order-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+}
+
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.restaurant-info {
+  display: flex;
+  gap: 16px;
+}
+
+.restaurant-info img {
+  width: 70px;
+  height: 70px;
+  border-radius: var(--radius-lg);
+  object-fit: cover;
+}
+
+.restaurant-info h3 {
+  margin: 0 0 6px 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.order-id {
+  margin: 0 0 4px 0;
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.order-date {
+  margin: 0;
+  color: #6c757d;
+  font-size: 0.85rem;
+}
+
+.status-chip {
+  font-weight: 600 !important;
+}
+
+/* Order Items */
+.order-items {
+  padding: 16px;
+  background: var(--light);
+  border-radius: var(--radius-md);
+  margin-bottom: 16px;
+}
+
+.item-name {
+  color: #495057;
+  font-size: 0.95rem;
+}
+
+.more-items {
+  color: var(--primary);
+  font-weight: 600;
+  margin-left: 4px;
+}
+
+/* Order Footer */
+.order-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.order-total {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.order-total span {
+  color: #6c757d;
+}
+
+.order-total strong {
+  font-size: 1.5rem;
+  color: var(--dark);
+}
+
+.order-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 20px;
+  border-radius: var(--radius-full);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.3s;
+  border: none;
+}
+
+.action-btn.track {
+  background: var(--gradient-primary);
+  color: white;
+}
+
+.action-btn.reorder {
+  background: var(--gradient-secondary);
+  color: white;
+}
+
+.action-btn.rate {
+  background: linear-gradient(135deg, #FFD700, #FFA500);
+  color: white;
+}
+
+.action-btn.help {
+  background: white;
+  border: 2px solid #e9ecef;
+  color: var(--dark);
+}
+
+.action-btn.help:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+/* Order Rating */
+.order-rating {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #e9ecef;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.rating-text {
+  color: #6c757d;
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .orders-page {
+    padding: 80px 0 40px;
+  }
+  
+  .order-header {
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .restaurant-info {
+    width: 100%;
+  }
+  
+  .order-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .order-actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  
+  .action-btn {
+    flex: 1;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,18 @@
+.restaurant-layout {
+  display: flex;
+  min-height: 100vh;
+  background: var(--light);
+}
+
+.restaurant-main {
+  flex: 1;
+  margin-left: 280px;
+  min-height: 100vh;
+  transition: margin-left 0.3s;
+}
+
+@media (max-width: 960px) {
+  .restaurant-main {
+    margin-left: 0;
+  }
+}

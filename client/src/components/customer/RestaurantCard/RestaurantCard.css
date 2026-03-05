@@ -1,0 +1,484 @@
+/* ========== Restaurant Card ========== */
+.restaurant-card {
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  position: relative;
+}
+
+.restaurant-card:hover {
+  box-shadow: var(--shadow-xl);
+}
+
+/* Image Section */
+.restaurant-card-image {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.restaurant-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.restaurant-card:hover .restaurant-card-image img {
+  transform: scale(1.1);
+}
+
+.image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0) 50%
+  );
+  pointer-events: none;
+}
+
+/* Offer Badge */
+.offer-badge {
+  position: absolute;
+  top: 16px;
+  left: 0;
+  background: var(--gradient-primary);
+  color: white;
+  padding: 8px 16px 8px 12px;
+  border-radius: 0 20px 20px 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  box-shadow: var(--shadow-md);
+}
+
+.offer-badge svg {
+  font-size: 1rem;
+}
+
+/* Pro Badge */
+.pro-badge {
+  position: absolute;
+  top: 16px;
+  right: 60px;
+  background: var(--gradient-secondary);
+  color: white;
+  padding: 6px 12px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.pro-badge svg {
+  font-size: 0.9rem;
+}
+
+/* Favorite Button */
+.favorite-btn {
+  position: absolute !important;
+  top: 12px;
+  right: 12px;
+  background: rgba(255, 255, 255, 0.9) !important;
+  backdrop-filter: blur(10px);
+  width: 40px !important;
+  height: 40px !important;
+  box-shadow: var(--shadow-sm) !important;
+  transition: all 0.3s !important;
+}
+
+.favorite-btn svg {
+  font-size: 1.25rem;
+  color: #6c757d;
+  transition: all 0.3s;
+}
+
+.favorite-btn:hover {
+  background: white !important;
+  transform: scale(1.1);
+}
+
+.favorite-btn.active svg {
+  color: var(--danger);
+}
+
+/* Delivery Time Badge */
+.delivery-time-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  background: white;
+  padding: 8px 14px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--dark);
+  box-shadow: var(--shadow-md);
+}
+
+.delivery-time-badge svg {
+  font-size: 1rem;
+  color: var(--primary);
+}
+
+/* Content Section */
+.restaurant-card-content {
+  padding: 20px;
+  position: relative;
+}
+
+/* Header */
+.restaurant-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+
+.restaurant-name {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin: 0;
+  line-height: 1.3;
+  flex: 1;
+  padding-right: 12px;
+}
+
+.restaurant-rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--success);
+  color: white;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.restaurant-rating svg {
+  font-size: 0.9rem;
+}
+
+/* Cuisines */
+.restaurant-cuisines {
+  font-size: 0.875rem;
+  color: #6c757d;
+  margin: 0 0 12px;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Tags */
+.restaurant-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.restaurant-tags .tag {
+  background: rgba(255, 107, 107, 0.1);
+  color: var(--primary);
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+/* Footer */
+.restaurant-card-footer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-top: 16px;
+  border-top: 1px solid #e9ecef;
+}
+
+.footer-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.8rem;
+  color: #6c757d;
+}
+
+.footer-item svg {
+  font-size: 1rem;
+  color: var(--primary);
+}
+
+.footer-item.free-delivery {
+  color: var(--success);
+  font-weight: 600;
+}
+
+.footer-item.free-delivery svg {
+  color: var(--success);
+}
+
+.footer-divider {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #dee2e6;
+}
+
+/* Closed Overlay */
+.closed-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.95);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.closed-overlay span {
+  font-weight: 700;
+  color: var(--danger);
+  font-size: 1rem;
+}
+
+.closed-overlay p {
+  font-size: 0.875rem;
+  color: #6c757d;
+  margin: 4px 0 0;
+}
+
+/* ========== Horizontal Card ========== */
+.restaurant-card-horizontal {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--white);
+  padding: 16px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  position: relative;
+}
+
+.restaurant-card-horizontal:hover {
+  box-shadow: var(--shadow-md);
+  background: var(--light);
+}
+
+.horizontal-image {
+  width: 100px;
+  height: 100px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.horizontal-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mini-offer-badge {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--primary);
+  color: white;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 4px;
+}
+
+.horizontal-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.horizontal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.horizontal-header h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.rating-badge {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  background: var(--success);
+  color: white;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.rating-badge svg {
+  font-size: 0.8rem;
+}
+
+.horizontal-cuisines {
+  font-size: 0.8rem;
+  color: #6c757d;
+  margin: 0 0 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.horizontal-meta {
+  display: flex;
+  gap: 16px;
+}
+
+.horizontal-meta span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.75rem;
+  color: #6c757d;
+}
+
+.horizontal-meta svg {
+  font-size: 0.9rem;
+  color: var(--primary);
+}
+
+.horizontal-favorite {
+  position: absolute !important;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.horizontal-favorite svg {
+  color: #dee2e6;
+}
+
+.horizontal-favorite.active svg {
+  color: var(--danger);
+}
+
+/* ========== Mini Card ========== */
+.restaurant-card-mini {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--white);
+  padding: 12px;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-base);
+}
+
+.restaurant-card-mini:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.restaurant-card-mini img {
+  width: 50px;
+  height: 50px;
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+}
+
+.mini-content {
+  flex: 1;
+}
+
+.mini-content h5 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--dark);
+  margin: 0 0 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mini-rating {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  font-size: 0.75rem;
+  color: var(--success);
+  font-weight: 600;
+}
+
+.mini-rating svg {
+  font-size: 0.85rem;
+}
+
+/* ========== Responsive ========== */
+@media (max-width: 768px) {
+  .restaurant-card-image {
+    height: 160px;
+  }
+  
+  .restaurant-card-content {
+    padding: 16px;
+  }
+  
+  .restaurant-name {
+    font-size: 1rem;
+  }
+  
+  .restaurant-card-footer {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .restaurant-card-image {
+    height: 140px;
+  }
+  
+  .offer-badge {
+    font-size: 0.7rem;
+    padding: 6px 12px 6px 10px;
+  }
+  
+  .delivery-time-badge {
+    padding: 6px 10px;
+    font-size: 0.75rem;
+  }
+  
+  .horizontal-image {
+    width: 80px;
+    height: 80px;
+  }
+}

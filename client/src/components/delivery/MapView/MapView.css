@@ -1,0 +1,166 @@
+/* ========== Map View ========== */
+.map-view {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.map-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #E8F4EA 0%, #D4E7D9 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.map-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.3;
+}
+
+.map-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.map-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Route SVG */
+.route-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Map Markers */
+.map-marker {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.marker-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-lg);
+  color: white;
+  position: relative;
+  z-index: 2;
+}
+
+.map-marker.pickup .marker-icon {
+  background: var(--primary);
+}
+
+.map-marker.dropoff .marker-icon {
+  background: var(--success);
+}
+
+.map-marker.driver .marker-icon {
+  background: var(--secondary);
+  width: 44px;
+  height: 44px;
+}
+
+.marker-icon svg {
+  font-size: 1.5rem;
+}
+
+.marker-pulse {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  animation: markerPulse 2s ease-out infinite;
+}
+
+.map-marker.pickup .marker-pulse {
+  background: var(--primary);
+}
+
+.map-marker.dropoff .marker-pulse {
+  background: var(--success);
+}
+
+@keyframes markerPulse {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(2);
+    opacity: 0;
+  }
+}
+
+/* Map Info Card */
+.map-info-card {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: white;
+  padding: 12px 24px;
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-lg);
+  z-index: 15;
+}
+
+.info-item {
+  text-align: center;
+}
+
+.info-item span {
+  display: block;
+  font-size: 0.7rem;
+  color: #6c757d;
+  text-transform: uppercase;
+}
+
+.info-item strong {
+  font-size: 1rem;
+  color: var(--dark);
+}
+
+.info-divider {
+  width: 1px;
+  height: 30px;
+  background: #e9ecef;
+}
+
+/* ========== Responsive ========== */
+@media (max-width: 480px) {
+  .marker-icon {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .marker-icon svg {
+    font-size: 1.25rem;
+  }
+  
+  .map-info-card {
+    padding: 10px 16px;
+    gap: 12px;
+  }
+}

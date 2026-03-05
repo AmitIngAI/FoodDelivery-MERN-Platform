@@ -1,0 +1,263 @@
+.how-it-works-section {
+  position: relative;
+  background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+  overflow: hidden;
+}
+
+/* Background Shapes */
+.hiw-background {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.hiw-shape {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.5;
+}
+
+.shape-1 {
+  width: 300px;
+  height: 300px;
+  background: var(--primary);
+  opacity: 0.03;
+  top: -100px;
+  left: 10%;
+  animation: float 15s ease-in-out infinite;
+}
+
+.shape-2 {
+  width: 200px;
+  height: 200px;
+  background: var(--secondary);
+  opacity: 0.05;
+  bottom: 20%;
+  right: 5%;
+  animation: float 12s ease-in-out infinite reverse;
+}
+
+.shape-3 {
+  width: 150px;
+  height: 150px;
+  background: var(--accent);
+  opacity: 0.05;
+  top: 40%;
+  left: 5%;
+  animation: float 10s ease-in-out infinite;
+}
+
+/* Steps Grid */
+.steps-grid {
+  position: relative;
+  margin-bottom: 80px;
+}
+
+/* Step Card */
+.step-card {
+  position: relative;
+  background: white;
+  border-radius: var(--radius-xl);
+  padding: 40px 30px;
+  text-align: center;
+  box-shadow: var(--shadow-md);
+  transition: all 0.4s;
+  height: 100%;
+}
+
+.step-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-xl);
+}
+
+/* Step Number */
+.step-number {
+  position: absolute;
+  top: -15px;
+  left: 20px;
+  font-size: 1rem;
+  font-weight: 800;
+  padding: 8px 16px;
+  border-radius: var(--radius-full);
+}
+
+/* Step Icon */
+.step-icon-wrapper {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin: 0 auto 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+
+.step-icon-img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+}
+
+/* Step Content */
+.step-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin: 0 0 12px 0;
+}
+
+.step-description {
+  font-size: 0.95rem;
+  color: #6c757d;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Connector */
+.step-connector {
+  position: absolute;
+  top: 30%;
+  right: -60px;
+  z-index: 10;
+  display: block;
+}
+
+/* CTA Section */
+.hiw-cta {
+  position: relative;
+  background: var(--gradient-primary);
+  border-radius: var(--radius-xl);
+  padding: 50px;
+  overflow: hidden;
+}
+
+.cta-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.cta-text h3 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: white;
+  margin: 0 0 8px 0;
+}
+
+.cta-text p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.cta-btn {
+  padding: 14px 32px;
+  border-radius: var(--radius-full);
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.3s;
+  border: none;
+}
+
+.cta-btn.primary {
+  background: white;
+  color: var(--primary);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.cta-btn.primary:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.cta-btn.secondary {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.cta-btn.secondary:hover {
+  background: white;
+  color: var(--primary);
+}
+
+/* Floating Emojis */
+.cta-floats {
+  position: absolute;
+  top: 0;
+  right: 50px;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  pointer-events: none;
+}
+
+.float-emoji {
+  font-size: 3rem;
+  opacity: 0.3;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .step-connector {
+    display: none;
+  }
+}
+
+@media (max-width: 960px) {
+  .hiw-cta {
+    padding: 40px 30px;
+  }
+  
+  .cta-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .cta-buttons {
+    justify-content: center;
+  }
+  
+  .cta-floats {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .step-card {
+    padding: 30px 20px;
+  }
+  
+  .step-icon-wrapper {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .step-icon-img {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .cta-text h3 {
+    font-size: 1.5rem;
+  }
+  
+  .cta-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

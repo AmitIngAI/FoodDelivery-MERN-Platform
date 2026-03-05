@@ -1,0 +1,364 @@
+.popular-dishes-section {
+  position: relative;
+  background: white;
+  overflow: hidden;
+}
+
+/* Floating Elements */
+.dishes-float-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.float-element {
+  position: absolute;
+  font-size: 4rem;
+  opacity: 0.05;
+}
+
+.f1 {
+  top: 10%;
+  left: 5%;
+}
+
+.f2 {
+  top: 60%;
+  right: 10%;
+}
+
+.f3 {
+  bottom: 20%;
+  left: 15%;
+}
+
+/* Filter */
+.dishes-filter {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 50px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 28px;
+  background: var(--light);
+  border: 2px solid transparent;
+  border-radius: var(--radius-full);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-family: 'Poppins', sans-serif;
+  color: var(--dark);
+}
+
+.filter-btn:hover {
+  background: white;
+  border-color: var(--primary);
+  box-shadow: var(--shadow-md);
+}
+
+.filter-btn.active {
+  background: var(--gradient-primary);
+  color: white;
+  border-color: var(--primary);
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+}
+
+.filter-btn-icon {
+  font-size: 1.25rem;
+}
+
+/* Dish Card */
+.dish-card {
+  position: relative;
+  background: white;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: var(--shadow-sm);
+  height: 100%;
+}
+
+.dish-card:hover {
+  transform: translateY(-12px);
+  box-shadow: var(--shadow-xl);
+}
+
+.dish-card:hover .dish-glow {
+  opacity: 1;
+}
+
+.dish-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient-vibrant);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* Image Wrapper */
+.dish-image-wrapper {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.dish-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s;
+}
+
+.dish-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60%;
+  background: linear-gradient(to top, rgba(0,0,0,0.5), transparent);
+  pointer-events: none;
+}
+
+/* Badges */
+.dish-badges {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  z-index: 2;
+}
+
+.bestseller-chip {
+  background: linear-gradient(135deg, #FFD700, #FFA500) !important;
+  color: white !important;
+  font-weight: 700 !important;
+}
+
+.bestseller-chip .MuiChip-icon {
+  color: white !important;
+}
+
+.trending-chip {
+  background: linear-gradient(135deg, #FF6B6B, #EE5A52) !important;
+  color: white !important;
+  font-weight: 700 !important;
+}
+
+.trending-chip .MuiChip-icon {
+  color: white !important;
+}
+
+/* Veg Indicator */
+.veg-indicator {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 24px;
+  height: 24px;
+  background: white;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid;
+  z-index: 2;
+}
+
+.veg-indicator.veg {
+  border-color: var(--success);
+  color: var(--success);
+}
+
+.veg-indicator.non-veg {
+  border-color: var(--danger);
+  color: var(--danger);
+}
+
+.veg-indicator svg {
+  font-size: 0.75rem;
+}
+
+/* Favorite Button */
+.dish-fav-btn {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  width: 36px;
+  height: 36px;
+  background: white;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: var(--shadow-md);
+  z-index: 2;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 0.3s;
+}
+
+.dish-card:hover .dish-fav-btn {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.dish-fav-btn svg {
+  font-size: 1.25rem;
+  color: #6c757d;
+}
+
+.dish-fav-btn svg.filled {
+  color: var(--danger);
+}
+
+/* Quick Add Button */
+.quick-add-btn {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  width: 36px;
+  height: 36px;
+  background: var(--gradient-primary);
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: var(--shadow-md);
+  z-index: 2;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 0.3s;
+}
+
+.dish-card:hover .quick-add-btn {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.quick-add-btn svg {
+  color: white;
+  font-size: 1.25rem;
+}
+
+/* Content */
+.dish-content {
+  padding: 16px;
+}
+
+.dish-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin: 0 0 6px 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dish-restaurant {
+  font-size: 0.85rem;
+  color: #6c757d;
+  margin: 0 0 10px 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Rating */
+.dish-rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 12px;
+}
+
+.star-icon {
+  color: #FFC107;
+  font-size: 1rem;
+}
+
+.rating-value {
+  font-weight: 700;
+  color: var(--dark);
+  font-size: 0.95rem;
+}
+
+.rating-reviews {
+  color: #6c757d;
+  font-size: 0.85rem;
+}
+
+/* Price Row */
+.dish-price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dish-price {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.current-price {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--primary);
+}
+
+.original-price {
+  font-size: 0.95rem;
+  color: #adb5bd;
+  text-decoration: line-through;
+}
+
+.discount-badge {
+  background: linear-gradient(135deg, var(--success), #00a878);
+  color: white;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+/* Responsive */
+@media (max-width: 960px) {
+  .dish-image-wrapper {
+    height: 180px;
+  }
+}
+
+@media (max-width: 600px) {
+  .filter-btn {
+    padding: 10px 20px;
+    font-size: 0.875rem;
+  }
+  
+  .dish-image-wrapper {
+    height: 160px;
+  }
+  
+  .dish-name {
+    font-size: 1rem;
+  }
+}

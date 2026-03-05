@@ -1,0 +1,21 @@
+.delivery-layout {
+  display: flex;
+  min-height: 100vh;
+  background: var(--light);
+}
+
+.delivery-main {
+  flex: 1;
+  margin-left: 280px;
+  padding: 24px;
+  overflow-y: auto;
+  transition: margin-left 0.3s ease;
+}
+
+@media (max-width: 1024px) {
+  .delivery-main {
+    margin-left: 0;
+    padding: 16px;
+    padding-bottom: 80px;
+  }
+}

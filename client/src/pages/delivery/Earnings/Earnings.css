@@ -1,0 +1,607 @@
+/* ========== Earnings Page ========== */
+.earnings-page {
+  padding-top: 0;
+}
+
+/* Header */
+.earnings-page .page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.earnings-page .page-header h1 {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--dark);
+  margin: 0 0 4px;
+}
+
+.earnings-page .page-header p {
+  color: #6c757d;
+  margin: 0;
+}
+
+.download-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: var(--white);
+  border: 2px solid var(--primary);
+  border-radius: var(--radius-full);
+  color: var(--primary);
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.3s;
+}
+
+.download-btn:hover {
+  background: var(--primary);
+  color: white;
+}
+
+/* Period Selector */
+.period-selector {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+  padding: 4px;
+  background: var(--white);
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-sm);
+  overflow-x: auto;
+}
+
+.period-btn {
+  flex: 1;
+  min-width: 100px;
+  padding: 12px 20px;
+  border: none;
+  background: transparent;
+  border-radius: var(--radius-full);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #6c757d;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.3s;
+  white-space: nowrap;
+}
+
+.period-btn.active {
+  background: var(--gradient-primary);
+  color: white;
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+}
+
+/* Main Earnings Card */
+.main-earnings-card {
+  background: var(--gradient-primary);
+  border-radius: var(--radius-xl);
+  padding: 32px;
+  margin-bottom: 24px;
+  position: relative;
+  overflow: hidden;
+  color: white;
+}
+
+.earnings-bg-pattern {
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+.earnings-content {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 32px;
+  position: relative;
+}
+
+.earnings-icon {
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.earnings-icon svg {
+  font-size: 2.5rem;
+}
+
+.earnings-label {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.earnings-amount {
+  font-size: 3rem;
+  font-weight: 800;
+  margin: 8px 0;
+}
+
+.earnings-change {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+}
+
+.earnings-change.positive {
+  color: #90EE90;
+}
+
+.earnings-change.negative {
+  color: #FFB6C1;
+}
+
+.earnings-change svg {
+  font-size: 1rem;
+}
+
+.earnings-breakdown {
+  display: flex;
+  gap: 24px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+}
+
+.breakdown-item {
+  flex: 1;
+  text-align: center;
+}
+
+.breakdown-item span {
+  display: block;
+  font-size: 0.8rem;
+  opacity: 0.8;
+  margin-bottom: 4px;
+}
+
+.breakdown-item strong {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+/* Stats Grid */
+.earnings-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.earning-stat-card {
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s;
+}
+
+.earning-stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.stat-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stat-icon.orders {
+  background: rgba(255, 107, 107, 0.1);
+  color: var(--primary);
+}
+
+.stat-icon.time {
+  background: rgba(78, 205, 196, 0.1);
+  color: var(--secondary);
+}
+
+.stat-icon.pending {
+  background: rgba(255, 196, 61, 0.1);
+  color: var(--warning);
+}
+
+.stat-icon svg {
+  font-size: 1.75rem;
+}
+
+.stat-details span {
+  display: block;
+  font-size: 0.8rem;
+  color: #6c757d;
+  margin-bottom: 4px;
+}
+
+.stat-details h3 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--dark);
+  margin: 0;
+}
+
+/* Chart Card */
+.earnings-chart-card {
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow-sm);
+}
+
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.chart-header h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin: 0;
+}
+
+.week-navigator {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.week-navigator button {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--light);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.week-navigator button:hover:not(:disabled) {
+  background: var(--primary);
+  color: white;
+}
+
+.week-navigator button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.week-navigator span {
+  font-weight: 600;
+  color: var(--dark);
+}
+
+.chart-container {
+  padding: 20px 0;
+}
+
+.chart-bars {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 200px;
+  gap: 12px;
+}
+
+.chart-bar-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.chart-bar-wrapper {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.chart-bar {
+  width: 100%;
+  max-width: 50px;
+  background: var(--gradient-primary);
+  border-radius: 8px 8px 0 0;
+  position: relative;
+  min-height: 20px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.chart-bar:hover {
+  opacity: 0.9;
+  transform: scaleY(1.02);
+}
+
+.bar-value {
+  position: absolute;
+  top: -28px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--dark);
+  color: white;
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  font-size: 0.7rem;
+  font-weight: 600;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.chart-bar:hover .bar-value {
+  opacity: 1;
+}
+
+.bar-label {
+  margin-top: 12px;
+  font-size: 0.8rem;
+  color: #6c757d;
+  font-weight: 500;
+}
+
+.chart-summary {
+  display: flex;
+  gap: 32px;
+  padding-top: 20px;
+  border-top: 1px solid #e9ecef;
+}
+
+.summary-item span {
+  display: block;
+  font-size: 0.8rem;
+  color: #6c757d;
+  margin-bottom: 4px;
+}
+
+.summary-item strong {
+  font-size: 1rem;
+  color: var(--dark);
+}
+
+/* Transactions */
+.transactions-card {
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow-sm);
+}
+
+.transactions-card .card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.transactions-card .card-header h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin: 0;
+}
+
+.view-all-btn {
+  background: transparent;
+  border: none;
+  color: var(--primary);
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+}
+
+.transactions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.transaction-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  background: var(--light);
+  border-radius: var(--radius-lg);
+  transition: all 0.3s;
+}
+
+.transaction-item:hover {
+  background: #e9ecef;
+}
+
+.transaction-icon {
+  width: 48px;
+  height: 48px;
+  background: rgba(6, 214, 160, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--success);
+}
+
+.transaction-details {
+  flex: 1;
+}
+
+.transaction-details h4 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--dark);
+  margin: 0 0 4px;
+}
+
+.transaction-details p {
+  font-size: 0.8rem;
+  color: #6c757d;
+  margin: 0;
+}
+
+.transaction-amounts {
+  text-align: right;
+}
+
+.main-amount {
+  display: block;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--success);
+}
+
+.tip-amount {
+  font-size: 0.75rem;
+  color: var(--warning);
+}
+
+/* Payout Card */
+.payout-card {
+  background: linear-gradient(135deg, var(--dark) 0%, var(--dark-light) 100%);
+  border-radius: var(--radius-xl);
+  padding: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  color: white;
+}
+
+.payout-info h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0 0 8px;
+}
+
+.payout-info p {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin: 0 0 20px;
+}
+
+.payout-amount {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.payout-amount span {
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+.payout-amount strong {
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.payout-date {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.withdraw-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 32px;
+  background: var(--gradient-primary);
+  border: none;
+  border-radius: var(--radius-full);
+  color: white;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+  transition: all 0.3s;
+  white-space: nowrap;
+}
+
+.withdraw-btn:hover {
+  box-shadow: 0 6px 20px rgba(255, 107, 107, 0.5);
+}
+
+/* ========== Responsive ========== */
+@media (max-width: 1024px) {
+  .earnings-page {
+    padding-top: 80px;
+  }
+  
+  .earnings-stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .earnings-page .page-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  
+  .download-btn {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .earnings-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .earnings-amount {
+    font-size: 2.5rem;
+  }
+  
+  .earnings-breakdown {
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .payout-card {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .withdraw-btn {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .chart-summary {
+    flex-direction: column;
+    gap: 16px;
+  }
+}

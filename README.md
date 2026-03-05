@@ -279,19 +279,27 @@ FoodDelivery Pro delivers:
 ```
 📸 Screenshots
 🏠 Home Page
-Home Page
+<img width="1917" height="928" alt="dashboard" src="https://github.com/user-attachments/assets/e9fb85ac-dee4-4bdf-a923-d1be5b8db150" />
+
 
 🔐 Login Page
-Login
+<img width="1905" height="928" alt="login page" src="https://github.com/user-attachments/assets/e393f986-23ae-4d3a-a097-d3a1bdfdcbd0" />
+
 
 🛒 Cart
-Cart
+<img width="1912" height="930" alt="cart" src="https://github.com/user-attachments/assets/31682727-dc71-48f8-93b6-597737ef9880" />
+
 
 📊 Restaurant Dashboard
-Restaurant Dashboard
+<img width="1920" height="932" alt="restaurant dashboard" src="https://github.com/user-attachments/assets/ffb9fa20-55d5-4c79-ac3a-49deb05eb7bf" />
+
+📊 Restaurant Menu
+<img width="1913" height="926" alt="Restaurant menu" src="https://github.com/user-attachments/assets/f0b18a9e-802e-4282-84bf-b616272e2378" />
+
 
 🚗 Delivery Dashboard
-Delivery Dashboard
+<img width="1907" height="930" alt="delivery partner" src="https://github.com/user-attachments/assets/93e0a36b-7e9f-4815-900a-584e649b1e0f" />
+
 ```
 🔒 Security Features
 ✅ JWT Authentication - Secure token-based auth

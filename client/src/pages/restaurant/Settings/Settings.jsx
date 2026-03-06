@@ -24,18 +24,12 @@ import {
   Schedule,
   Payment,
   Notifications,
-  Security,
   LocationOn,
   Phone,
   Email,
-  Language,
   Save,
-  Add,
-  Delete,
-  Edit,
   AccessTime,
   CurrencyRupee,
-  Percent,
   DeliveryDining,
 } from '@mui/icons-material';
 import { motion, AnimatePresence } from 'framer-motion';

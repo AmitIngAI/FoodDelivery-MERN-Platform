@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {
-  Grid,
   Card,
   CardContent,
   Tabs,
@@ -33,7 +32,7 @@ import './Orders.css';
 
 const Orders = () => {
   const dispatch = useDispatch();
-  const { orders, activeOrders, completedOrders } = useSelector(state => state.restaurant);
+  const { orders, completedOrders } = useSelector(state => state.restaurant);
   
   const [activeTab, setActiveTab] = useState(0);
   const [selectedOrder, setSelectedOrder] = useState(null);
@@ -71,7 +70,6 @@ const Orders = () => {
 
   const handleViewOrder = (order) => {
     setSelectedOrder(order);
-    setShowOrderDetail(true);
   };
 
   const getTimeSince = (dateString) => {

@@ -5,7 +5,6 @@ import {
   Favorite,
   FavoriteBorder,
   Search,
-  FilterList,
   GridView,
   ViewList,
   SortRounded,

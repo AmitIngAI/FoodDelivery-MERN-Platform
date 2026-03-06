@@ -32,15 +32,13 @@ import {
   QrCode2,
   ArrowBack,
   Edit,
-  Delete,
   LocalOffer,
   Timer,
   Security,
 } from '@mui/icons-material';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  addAddress, 
-  setSelectedAddress, 
+  addAddress,
   clearCart,
   addOrder,
 } from '../../../redux/slices/customerSlice';
@@ -51,8 +49,8 @@ const Checkout = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   
-  const { cart, addresses, selectedAddress } = useSelector(state => state.customer);
-  const { user, isAuthenticated } = useSelector(state => state.auth);
+  const { cart, addresses, } = useSelector(state => state.customer);
+  const { isAuthenticated } = useSelector(state => state.auth);
   
   const [activeStep, setActiveStep] = useState(0);
   const [selectedAddressId, setSelectedAddressId] = useState(addresses[0]?.id || null);
@@ -85,7 +83,7 @@ const Checkout = () => {
     if (cart.items.length === 0) {
       navigate('/cart');
     }
-  }, [isAuthenticated, cart.items]);
+  }, [isAuthenticated, cart.items, navigate]);
 
   const handleNext = () => {
     if (activeStep === 0 && !selectedAddressId) {

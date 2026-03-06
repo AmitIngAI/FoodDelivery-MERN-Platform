@@ -2,8 +2,7 @@ import React from 'react';
 import { Container, Grid } from '@mui/material';
 import { 
   Apple, 
-  Android, 
-  CheckCircle,
+  Android,
   Smartphone,
   FlashOn,
   LocalOffer,

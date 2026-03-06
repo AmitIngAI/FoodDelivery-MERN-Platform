@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Container, InputBase, IconButton } from '@mui/material';
+import { Container, InputBase } from '@mui/material';
 import { Search, LocationOn, ArrowForward, Star, AccessTime, LocalOffer } from '@mui/icons-material';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Swiper, SwiperSlide } from 'swiper/react';

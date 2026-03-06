@@ -5,7 +5,6 @@ import {
   Container,
   Grid,
   TextField,
-  IconButton,
   Divider,
 } from '@mui/material';
 import {
@@ -15,7 +14,6 @@ import {
   ShoppingCartOutlined,
   LocalOffer,
   ArrowBack,
-  Restaurant,
   CheckCircle,
   Info,
 } from '@mui/icons-material';

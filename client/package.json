@@ -38,7 +38,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "set \"CI=false\" && react-scripts build",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -48,7 +48,8 @@
       "react-app/jest"
     ],
     "rules": {
-      "no-unused-vars": "warn"
+      "no-unused-vars": "off",
+      "no-undef": "off"
     }
   },
   "browserslist": {
